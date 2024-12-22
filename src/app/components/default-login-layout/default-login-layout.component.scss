@@ -51,7 +51,7 @@ main  {
         width: 100%;
 
         font-size: 14px;
-        color: $gray-bg;
+        color: #C2C2C2;
         font-weight: 400;
         text-transform: uppercase;
 
@@ -71,6 +71,10 @@ main  {
         background: transparent;
         padding: 12px 24px;
         cursor: pointer;
+
+        &:disabled {
+          opacity: 0.8;
+        }
 
         &.btn-primary {
           background-color: $primary-color;
