@@ -5,6 +5,7 @@ import {NgOptimizedImage} from '@angular/common';
   selector: 'app-default-login-layout',
   imports: [
     NgOptimizedImage
+
   ],
   templateUrl: './default-login-layout.component.html',
   styleUrl: './default-login-layout.component.scss'
