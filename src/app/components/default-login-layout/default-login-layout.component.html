@@ -1,14 +1,18 @@
 <main>
-  <section>
+  <section class="form-section">
     <img src="/logo.svg" alt="logo-login-app">
-    <h2></h2>
-    <button></button>
-    <div>
-      <span>or</span>
+    <h2>{{ title }}</h2>
+    <div class="btn-wrapper">
+      <button class="btn-primary">{{ primaryBtnText }}</button>
+      <div class="divider">
+        <div></div>
+        <span>or</span>
+        <div></div>
+      </div>
+      <button class="btn-secondary">{{ secondaryBtnText }}</button>
     </div>
-    <button></button>
   </section>
-  <section>
+  <section class="main-section">
     <h2>You should, MoveIt!</h2>
     <img src="/main-image.svg" alt="main-app-image">
   </section>
