@@ -6,6 +6,11 @@ import {Router} from '@angular/router';
 import {LoginService} from '../../../services/login.service';
 import {ToastrService} from 'ngx-toastr';
 
+interface loginForm {
+  email: FormControl,
+  password: FormControl
+}
+
 @Component({
   selector: 'app-login',
   imports: [
@@ -21,7 +26,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 
 export class LoginComponent {
-  loginForm!: FormGroup
+  loginForm!: FormGroup<loginForm>
 
   constructor(
     private router: Router,
@@ -41,7 +46,7 @@ export class LoginComponent {
     })
   }
   navigate(){
-    this.router.navigate(["/signup"])
+    this.router.navigate(["signup"])
   }
 }
 
