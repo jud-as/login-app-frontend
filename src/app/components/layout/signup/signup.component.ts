@@ -10,47 +10,47 @@ interface SignupForm {
   name: FormControl,
   email: FormControl,
   password: FormControl,
-  confirmPassword: FormControl
+  passwordConfirm: FormControl
 }
 
 @Component({
   selector: 'app-signup',
+  standalone: true,
   imports: [
     DefaultLoginLayoutComponent,
     ReactiveFormsModule,
-    PrimaryInputComponent,
+    PrimaryInputComponent
   ],
   providers: [
-    LoginService,
+    LoginService
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
-
 export class SignUpComponent {
   signupForm!: FormGroup<SignupForm>;
 
   constructor(
     private router: Router,
     private loginService: LoginService,
-    private ToastService: ToastrService
-  ) {
+    private toastService: ToastrService
+  ){
     this.signupForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(6)]),
     })
   }
 
   submit(){
     this.loginService.login(this.signupForm.value.email, this.signupForm.value.password).subscribe({
-      next: () => this.ToastService.success("Login successful"),
-      error: () => this.ToastService.error("Login failed")
+      next: () => this.toastService.success("Login feito com sucesso!"),
+      error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
     })
   }
+
   navigate(){
     this.router.navigate(["login"])
   }
 }
-
