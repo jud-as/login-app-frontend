@@ -1,15 +1,27 @@
 <main>
-  <section>
-    <img src="#">
-    <h2></h2>
-    <button></button>
-    <div>
-      <span>or</span>
+  <section class="form-section">
+    <img src="/logo.svg" alt="logo-login-app">
+    <h2>{{ title }}</h2>
+    <ng-content></ng-content>
+    <div class="btn-wrapper">
+      <button
+        class="btn-primary"
+        (click)="submit()"
+        [disabled]="disablePrimaryBtn"
+      >
+        {{ primaryBtnText }}
+
+      </button>
+      <div class="divider">
+        <div></div>
+        <span>or</span>
+        <div></div>
+      </div>
+      <button class="btn-secondary" (click)="navigate()">{{ secondaryBtnText }}</button>
     </div>
-    <button></button>
   </section>
-  <section>
+  <section class="main-section">
     <h2>You should, MoveIt!</h2>
-    <img src="#" alt="">
+    <img src="/main-image.svg" alt="main-app-image">
   </section>
 </main>
